@@ -1,0 +1,35 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 20px;
+}
+body {
+  text-align: center;
+  font-size: 18px;
+}
+
+div {
+  padding: 20px;
+}
+
+button {
+  display: inline-block;
+  margin: 20px 20px;
+  padding: 0.75rem 1.25rem;
+  border-radius: 10rem;
+  background-color: #0cf;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 0.15rem;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #008fb3;
+}

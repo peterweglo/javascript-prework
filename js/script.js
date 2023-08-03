@@ -15,7 +15,6 @@ function playGame(playerInput) {
 
   function displayResult(argComputerMove, argPlayerMove) {
     printMessage("Zagrałem " + argComputerMove + ", a Ty " + argPlayerMove);
-    console.log(playerWins, computerWins);
 
     if (argComputerMove == "kamień" && argPlayerMove == "papier") {
       printMessage("Ty Wygrywasz!");

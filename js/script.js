@@ -54,4 +54,3 @@ let playerMove = getMoveName(playerInput);
 console.log("Ruchy:", computerMove, playerMove);
 
 displayResult(computerMove, playerMove);
-3;

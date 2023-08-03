@@ -68,6 +68,7 @@ function playGame(playerInput) {
   displayResult(computerMove, playerMove);
 
   result();
+  winner();
 }
 
 document.getElementById("play-rock").addEventListener("click", function () {
@@ -82,3 +83,15 @@ document.getElementById("play-scissors").addEventListener("click", function () {
 
 let playerWins = 0;
 let computerWins = 0;
+
+function winner() {
+  if (playerWins == 3) {
+    printWinner("Wygrałeś!!!");
+    playerWins = 0;
+    computerWins = 0;
+  } else if (computerWins == 3) {
+    printWinner("Przegrałeś!!!");
+    playerWins = 0;
+    computerWins = 0;
+  }
+}

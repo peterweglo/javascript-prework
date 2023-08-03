@@ -47,6 +47,12 @@ function playGame(playerInput) {
     }
   }
 
+  function result() {
+    document.getElementById("counter").textContent =
+      playerWins + " : " + computerWins;
+    console.log(playerWins, computerWins);
+  }
+
   let randomNumber = Math.floor(Math.random() * 3 + 1);
 
   console.log("Wylosowana liczba to: " + randomNumber);
@@ -60,26 +66,19 @@ function playGame(playerInput) {
   console.log("Ruchy:", computerMove, playerMove);
 
   displayResult(computerMove, playerMove);
+
+  result();
 }
 
 document.getElementById("play-rock").addEventListener("click", function () {
   playGame(1);
-  result();
 });
 document.getElementById("play-paper").addEventListener("click", function () {
   playGame(2);
-  result();
 });
 document.getElementById("play-scissors").addEventListener("click", function () {
   playGame(3);
-  result();
 });
 
 let playerWins = 0;
 let computerWins = 0;
-
-function result() {
-  document.getElementById("counter").textContent =
-    playerWins + " : " + computerWins;
-  console.log(playerWins, computerWins);
-}

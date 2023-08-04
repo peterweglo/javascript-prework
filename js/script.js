@@ -47,12 +47,6 @@ function playGame(playerInput) {
     }
   }
 
-  function result() {
-    document.getElementById("counter").textContent =
-      playerWins + " : " + computerWins;
-    console.log(playerWins, computerWins);
-  }
-
   let randomNumber = Math.floor(Math.random() * 3 + 1);
 
   console.log("Wylosowana liczba to: " + randomNumber);
@@ -71,6 +65,12 @@ function playGame(playerInput) {
   winner();
 }
 
+function result() {
+  document.getElementById("counter").textContent =
+    playerWins + " : " + computerWins;
+  console.log(playerWins, computerWins);
+}
+
 document.getElementById("play-rock").addEventListener("click", function () {
   playGame(1);
 });
@@ -87,11 +87,23 @@ let computerWins = 0;
 function winner() {
   if (playerWins == 3) {
     printWinner("Wygrałeś!!!");
-    playerWins = 0;
-    computerWins = 0;
+    newStart();
   } else if (computerWins == 3) {
     printWinner("Przegrałeś!!!");
-    playerWins = 0;
-    computerWins = 0;
+    newStart();
   }
+}
+
+function newStart() {
+  playerWins = 0;
+  computerWins = 0;
+  document.getElementById("buttons").className = "invisible";
+  document.getElementById("newStart").className = "visible";
+  document.getElementById("newStart").addEventListener("click", function () {
+    document.getElementById("buttons").className = "visible";
+    document.getElementById("newStart").className = "invisible";
+    clearMessages();
+    clearWinner();
+    result();
+  });
 }
